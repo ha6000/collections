@@ -1,4 +1,4 @@
-
+> Exactly same as original except Array.from and addEach fixed
 # Collections
 
 [![npm version](https://img.shields.io/npm/v/collections.svg?style=flat)](https://www.npmjs.com/package/collections)
