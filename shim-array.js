@@ -32,7 +32,7 @@ Array.from = function (values, mapFn, thisArg) {
     }
     //Now we add support for values that implement forEach:
     var array = [];
-    array.addEach(values);
+    array.addEach(values, mapFn);
     return array;
 };
 
