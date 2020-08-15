@@ -14,7 +14,7 @@ GenericCollection.prototype.addEach = function (values, mapFn, thisp) {
     if(values && (values instanceof Array || (values instanceof DOMTokenList) || values instanceof String)) {
         if(mapFn) {
             for (var i = 0; i < values.length; i++) {
-                this.add(mapFn.call(thisp,values[i]), i);
+                this.add(mapFn.call(thisp,values[i],i), i);
             }
         } else {
             for (var i = 0; i < values.length; i++) {
@@ -33,7 +33,7 @@ GenericCollection.prototype.addEach = function (values, mapFn, thisp) {
             var value, i=0;
             if(mapFn) {
                 while ((value = values.next().value)) {
-                    this.add(mapFn.call(thisp,value), i++);
+                    this.add(mapFn.call(thisp,value,i), i++);
                 }
             }
             else {
@@ -46,7 +46,7 @@ GenericCollection.prototype.addEach = function (values, mapFn, thisp) {
             // Arguments
             if(mapFn) {
                 for (var i = 0; i < values.length; i++) {
-                    this.add(mapFn.call(thisp,values[i]), i);
+                    this.add(mapFn.call(thisp,values[i],i), i);
                 }
             }
             else {
@@ -57,7 +57,7 @@ GenericCollection.prototype.addEach = function (values, mapFn, thisp) {
         } else {
             if(mapFn) {
                 Object.keys(values).forEach(function (key) {
-                    this.add(mapFn.call(thisp,values[key]), key);
+                    this.add(mapFn.call(thisp,values[key],key), key);
                 }, this);
             } else {
                 Object.keys(values).forEach(function (key) {
